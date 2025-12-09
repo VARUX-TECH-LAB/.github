@@ -1,72 +1,71 @@
-# VARUX — Cybersecurity Beyond Convention
 
-> _"We do not protect systems. We expose the illusion of their security."_  
-> — VARUX Doctrine
-
-![VARUX](https://github.com/user-attachments/assets/6529b563-a28c-436d-bc6b-c9ac87e6f721)
+![1763121962050](https://github.com/user-attachments/assets/dac9d53f-ab88-42ff-b4a9-8e810fe61699)
 
 
----
 
-## 🧠 Who We Are
+# VARUX — Autonomous Security Infrastructure
 
-**VARUX** is not just a cybersecurity company — it's a resistance.  
-Born from hacker philosophy, fueled by information warfare, and driven by one singular belief:  
-**Data is power — and power must be decentralized.**
-
-We are the edge where red teaming meets philosophy, and where intelligence is not harvested — it is **forged**.
+**VARUX**, otonom yapay zeka güvenliği, OT ağ görünürlüğü ve dış dünya zekasını tek bir karar katmanında birleştiren siber güvenlik şirketidir. Tüm mimari üç ana eksen üzerinde konumlanır:
 
 ---
 
-## 🔧 What We Do
+## 1. SS3 Intelligence Framework
 
-- **Advanced Offensive Security**  
-  Red team operations, adversary simulations, and real-world breach modeling.
+Web dışı alan adı, IP evreni, TLS/PKI verileri, tedarik zinciri varlıkları ve zaman bazlı ilişki topolojisi üreten modüler zeka sistemi.
 
-- **Custom Reconnaissance Frameworks**  
-  Open-source intelligence (OSINT) tools that scrape deeper, faster, and quieter.
+Ana bileşenler:
 
-- **Malware, Payloads & Implants**  
-  Stealth-based, signatureless, and undetectable until it's too late.
-
-- **Cyber Intelligence & Threat Monitoring**  
-  Decentralized honeypots and passive surveillance ecosystems.
-
-- **S3LOC** (Classified)  
-  > The project that should not exist.  
-  > A synthetic signal intelligence platform.  
-  > Autonomous. Self-adapting. And very, very quiet.
+* Sentinel Node — Pasif gözlem ağları
+* Archivum Core — Zaman bantlı arşivleme
+* Council Mesh — Korelasyon, ilişki ağları
+* Ledger — Değiştirilemez doğrulama
+* Grand Node — Merkezi analitik
 
 ---
 
-## 🚩 Our Ethos
+## 2. VARUX OT Discovery
 
-We don’t sell security.  
-We sell awareness of insecurity.
+PLC, RTU, SCADA ve fieldbus tabanlı ağların görünür hale getirilmesi ve endüstriyel risk modellemesi.
 
-We believe in:
-- 🔓 Transparency over comfort  
-- 🔍 Truth over perception  
-- 🔥 Breaking systems to rebuild reality  
+Yetenekler:
 
----
-
-## 🛠️ Selected Tools (coming soon)
-
-| Tool | Description |
-|------|-------------|
-| `VX-Recon` | A deep reconnaissance engine built for intelligence-grade enumeration. |
-| `S3LOC` | [REDACTED] |
-| `P0WDER` | Payload generator with modular encoding & staging systems. |
-| `GhostPrint` | Metadata stripping + forensic fingerprinting tool. |
+* OT fingerprinting
+* Protokol analizi
+* Topoloji çıkarımı
+* ICS varlık haritalama
 
 ---
 
-## 🕳️ Join the Rabbit Hole
+## 3. VARUX Atlas
 
-We are not hiring.  
-We are observing.  
-When it's time — **you’ll know.**
+SS3 ve OT Discovery tarafından toplanan veriyi tekleştirilmiş risk ve varlık grafiğine dönüştüren karar katmanı.
 
----  
-© VARUX | Code is a weapon. Use it wisely.
+Sunar:
+
+* Operasyonel risk görünürlüğü
+* Ajan davranış korelasyonu
+* Varlık bağımlılık modeli
+
+---
+
+## Technology Philosophy
+
+Güvenlik, kapatma işi değildir. Görünürlük işidir. Bu nedenle VARUX, klasik "koruma" süreçlerini değil, karar yüzeylerini genişleten otonom bir mimari uygular.
+
+* Autonomous
+* Intelligence‑centric
+* Industrial‑ready
+
+---
+
+## Focus
+
+* Otonom güvenlik katmanı
+* ICS/OT görünürlük
+* OSINT tabanlı karar zekası
+
+---
+
+© VARUX
+
+
