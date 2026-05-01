@@ -2,9 +2,16 @@
 <h3 align="center">Deterministic Infrastructure Security</h3>
 
 <p align="center">
-  VARUX provides strict, deterministic control planes for mission-critical infrastructure.
-  We replace perimeter-based guesswork with absolute cryptographic verification,
-  protocol-level classification, and stateful policy enforcement.
+  Strict control planes for mission-critical infrastructure.
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dac9d53f-ab88-42ff-b4a9-8e810fe61699" alt="VARUX Banner" width="920" />
+</p>
+
+<p align="center">
+  VARUX replaces perimeter-based guesswork with cryptographic verification,
+  protocol-level classification, and deterministic policy enforcement.
 </p>
 
 <hr>
@@ -12,8 +19,9 @@
 <h2>Overview</h2>
 
 <p>
-  VARUX shifts security from reactive monitoring to proactive, deterministic execution
-  across two main layers: <strong>Network Access</strong> and <strong>Data Governance</strong>.
+  VARUX is built to enforce deterministic execution across critical infrastructure.
+  The architecture is structured around two control layers:
+  <strong>Access Control</strong> and <strong>Data Governance</strong>.
 </p>
 
 <table>
@@ -21,19 +29,19 @@
     <tr>
       <th align="left">Layer</th>
       <th align="left">Component</th>
-      <th align="left">Purpose</th>
+      <th align="left">Role</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Access Control Plane</td>
       <td><strong>VARUX Axis</strong></td>
-      <td>Controls and validates traffic before it reaches internal services.</td>
+      <td>Validates and governs traffic before it reaches internal services.</td>
     </tr>
     <tr>
       <td>Data Control Plane</td>
       <td><strong>VARUX Arbiter / DB Guard</strong></td>
-      <td>Intercepts and governs SQL operations before execution.</td>
+      <td>Intercepts and governs SQL execution before it reaches production databases.</td>
     </tr>
   </tbody>
 </table>
@@ -42,44 +50,40 @@
 
 <h2>Core Architecture</h2>
 
-<h3>1. VARUX Axis</h3>
-
-<p>
-  The deterministic access layer. A unified network proxy and gateway that enforces
-  strict identity, context, and state boundaries before any traffic reaches internal services.
-</p>
-
 <table>
   <thead>
     <tr>
-      <th align="left">Capability</th>
-      <th align="left">Description</th>
+      <th align="left">VARUX Axis</th>
+      <th align="left">VARUX Arbiter / DB Guard</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>
+        Deterministic access layer built as a unified proxy and gateway.
+        It enforces identity, context, and state boundaries before traffic
+        reaches internal services.
+      </td>
+      <td>
+        Definitive decision gate for production databases.
+        It classifies and governs every SQL query before execution,
+        preventing catastrophic data loss, rogue AI actions, and operator mistakes.
+      </td>
+    </tr>
+    <tr>
       <td><strong>Identity-First Validation</strong></td>
-      <td>Cryptographic proof is required for every incoming request.</td>
+      <td><strong>SQL Intent Classification</strong></td>
     </tr>
     <tr>
-      <td><strong>Stateful Enforcement</strong></td>
-      <td>Real-time access policy execution across dynamic environments.</td>
+      <td><strong>Stateful Policy Enforcement</strong></td>
+      <td><strong>Deterministic Policy Decisions</strong></td>
     </tr>
     <tr>
-      <td><strong>Protocol-Agnostic Bridging</strong></td>
-      <td>Secure routing for microservices, scripts, and legacy systems.</td>
+      <td><strong>Protocol-Agnostic Routing</strong></td>
+      <td><strong>Immutable Audit Logging</strong></td>
     </tr>
   </tbody>
 </table>
-
-<h3>2. VARUX Arbiter / DB Guard</h3>
-
-<p>
-  The definitive decision gate for production databases such as PostgreSQL.
-  Arbiter intercepts, classifies, and governs every SQL query before execution,
-  acting as the ultimate failsafe against catastrophic data loss, rogue AI agents,
-  or human error.
-</p>
 
 <hr>
 
@@ -99,50 +103,88 @@
     </tr>
     <tr>
       <td><strong>Classifier</strong></td>
-      <td>Parses SQL intake to determine exact intent: READ vs WRITE / DESTRUCTIVE.</td>
+      <td>Determines exact intent: READ, WRITE, or DESTRUCTIVE.</td>
     </tr>
     <tr>
       <td><strong>Policy Engine</strong></td>
-      <td>Evaluates queries against approved scopes, guard rules, rate limits, and dynamic risk tags.</td>
+      <td>Evaluates approved scopes, guard rules, rate limits, and dynamic risk tags.</td>
     </tr>
     <tr>
       <td><strong>Enforcer</strong></td>
-      <td>Executes the deterministic decision: ALLOW, BLOCK, or REQUIRE_APPROVAL.</td>
+      <td>Returns a deterministic decision: ALLOW, BLOCK, or REQUIRE_APPROVAL.</td>
     </tr>
     <tr>
       <td><strong>Immutable Audit</strong></td>
-      <td>Logs Request, Actor, SQL Payload, Decision, and Reason Code.</td>
+      <td>Logs the request, actor, SQL payload, decision, and reason code.</td>
     </tr>
   </tbody>
 </table>
 
 <hr>
 
-<h2>Enforcer in Action</h2>
+<h2>Enforcer Example</h2>
 
-<pre><code class="language-sql">-- Client initiates a rogue or mistaken query
-DELETE FROM production_users;
+<pre><code class="language-sql">DELETE FROM production_users;
 
--- Arbiter Interception: BLOCKED
--- Reason Code: ERR_MISSING_WHERE_CLAUSE
--- Action: Query dropped before reaching DB. Logged to Event Store.
+Decision: BLOCK
+Reason: ERR_MISSING_WHERE_CLAUSE
+Action: Query dropped before reaching the database.
 </code></pre>
 
 <hr>
 
 <h2>Technology Philosophy</h2>
 
+<table>
+  <thead>
+    <tr>
+      <th align="left">Principle</th>
+      <th align="left">Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Deterministic Security</strong></td>
+      <td>Security is based on proof, policy, and execution integrity rather than assumption.</td>
+    </tr>
+    <tr>
+      <td><strong>Zero Exceptions</strong></td>
+      <td>If a request does not satisfy policy, it is rejected instantly.</td>
+    </tr>
+    <tr>
+      <td><strong>Fail-Closed Design</strong></td>
+      <td>The system defaults to blocking ambiguity and unauthorized behavior.</td>
+    </tr>
+    <tr>
+      <td><strong>Audit-Ready Validation</strong></td>
+      <td>Unsafe actions must be blocked and immutably recorded before damage occurs.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Positioning</h2>
+
+<p>
+  VARUX is not built for passive observability alone.
+  It is built to become the deterministic control layer between critical actors and critical systems.
+</p>
+
 <ul>
-  <li><strong>Deterministic Security:</strong> Security is not about guessing intent. It is about mathematical proof and deterministic execution.</li>
-  <li><strong>Zero Exceptions:</strong> If a request does not meet strict policy requirements, it is dropped instantly.</li>
-  <li><strong>Fail-Closed Design:</strong> The system defaults to blocking unauthorized or ambiguous actions.</li>
-  <li><strong>Audit-Ready Validation:</strong> A bad query must be blocked and immutably logged before any damage occurs.</li>
+  <li><strong>Network trust enforcement</strong></li>
+  <li><strong>Production database write governance</strong></li>
+  <li><strong>AI-agent action containment</strong></li>
+  <li><strong>Immutable decision accountability</strong></li>
 </ul>
 
 <hr>
 
 <p align="center">
   <strong>VARUX</strong><br>
-  Deterministic control for critical infrastructure<br><br>
+  Deterministic control for critical infrastructure
+</p>
+
+<p align="center">
   <a href="https://varuxcyber.com">varuxcyber.com</a>
 </p>
